@@ -9,7 +9,7 @@ n.start((ctx) => ctx.reply('Hello! Im remover tag bot. Fordward a message'))
 //})
 
 n.on('message', (ctx) => {
-     var a = tg.getChatMember("-1001552066211", ctx.from.id)
+     var a = n.telegram.getChatMember("-1001552066211", ctx.from.id)
      var member = a.result
       if(member.status == 'restricted' || member.status == 'left' || member.status == 'kicked')
          n.telegram.restrictChatMember(ctx.chat.id, ctx.from.id, { can_send_messages : false, can_send_media_messages : false, can_send_polls : false, can_send_other_messages: false, can_add_web_page_previews : false})              

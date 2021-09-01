@@ -14,7 +14,7 @@ n.on('message', (ctx) => {
       if(member.status == 'restricted' || member.status == 'left' || member.status == 'kicked')
          n.telegram.restrictChatMember(ctx.chat.id, ctx.from.id, { can_send_messages : false, can_send_media_messages : false, can_send_polls : false, can_send_other_messages: false, can_add_web_page_previews : false})              
          ctx.reply("Silahkan Join Dulu Ke Channel yang ada di bio bot ya!")
-         ...Markup.inlineKeyboard([
+         Markup.inlineKeyboard([
          Markup.button.url('Channel', 't.me/cookiesey'),
         Markup.button.callback('Unmute', 'unmute')
      ])

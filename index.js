@@ -12,12 +12,13 @@ n.on('message', (ctx) => {
      var member = n.telegram.getChatMember(process.env.chat, ctx.from.id)
       if(member.status == 'restricted' || member.status == 'left' || member.status == 'kicked')
          n.telegram.restrictChatMember(ctx.chat.id, ctx.from.id, { can_send_messages : false, can_send_media_messages : false, can_send_polls : false, can_send_other_messages: false, can_add_web_page_previews : false})              
-         ctx.reply("Silahkan Join Dulu Ke Channel yang ada di bio bot ya!")
+         return ctx.reply("Silahkan Join Dulu Ke Channel yang ada di bio bot ya!")
          Markup.inlineKeyboard([
-         Markup.button.url('Channel', 't.me/cookiesey'),
-        Markup.button.callback('Unmute', 'unmute')
-     ])
-  })
+         Markup.button.url('Channel Bot', 'https://t.me/cookiesey'),
+         Markup.button.callback('unmute', 'unmute')
+    ])
+  )
+})
 
 n.action('unmute', (ctx) => {
       n.telegram.restrictChatMember(ctx.chat.id, ctx.from.id, { can_send_messages : true, can_send_media_messages : true, can_send_polls : false, can_send_other_messages: true, can_add_web_page_previews : true})   

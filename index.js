@@ -19,7 +19,6 @@ n.on('message', (ctx) => {
         Markup.button.callback('Unmute', 'unmute')
      ])
   })
-})
 
 n.action('unmute', (ctx) => {
       n.telegram.restrictChatMember(ctx.chat.id, ctx.from.id, { can_send_messages : true, can_send_media_messages : true, can_send_polls : false, can_send_other_messages: true, can_add_web_page_previews : true})   

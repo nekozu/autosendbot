@@ -15,6 +15,6 @@ n.on('message', (ctx) => {
          bot.telegram.restrictChatMember('-1001590858858', ctx.from.id, { can_send_messages : false, can_send_media_messages : false, can_send_polls : false, can_send_other_messages: false, can_add_web_page_previews : false})              
          ctx.reply("Silahkan Join Dulu Ke Channel yang ada di bio bot ya!")
    //} else {
-})
+}
 
 n.launch()

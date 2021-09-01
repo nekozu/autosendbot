@@ -17,7 +17,6 @@ n.on('message', (ctx) => {
          Markup.button.url('Channel Bot', 'https://t.me/cookiesey'),
          Markup.button.callback('unmute', 'unmute')
     ])
- })
 })
 
 n.action('unmute', (ctx) => {

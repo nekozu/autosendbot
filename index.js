@@ -9,7 +9,7 @@ n.on('message', (ctx) => {
         ;
     } else {
         const msg_id = ctx.msg.message_id;
-        await ctx.api.forwardMessage(process.env.group_id, from_id, msg_id);
+        await ctx.api.forwardMessage(process.env.chat_id, from_id, msg_id);
     }
     const reply_msg = ctx.update.message.reply_to_message
     const reply_msg_user_id = reply_msg.forward_from.id

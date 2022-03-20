@@ -7,7 +7,7 @@ n.start((ctx) => ctx.reply('Hello! '))
 n.on('message', (ctx) => {
     let msg = ctx.message.from.id
     let text = ctx.message.message_id
-    if (from_id == own_id){
+    if (msg == text) {
         ;
     } else {
     ctx.forwardMessage(chat_id, msg, text);

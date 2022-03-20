@@ -1,4 +1,4 @@
-const { Telegraf} = require("telegraf");
+const { Telegraf, Telegram} = require("telegraf");
 const n = new Telegraf(process.env.token)
 const chat_id = process.env.chat_id
 

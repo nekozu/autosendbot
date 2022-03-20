@@ -9,7 +9,7 @@ n.on('message', (ctx) => {
     let text = ctx.message.message_id
     ctx.forwardMessage(chat_id, msg, text);
     const reply_msg = ctx.message.reply_to_message_id
-    const reply_msg_user_id = reply_msg.forward_from.id
+    const reply_msg_user_id = ctx.message.reply_to_message_id.forward_from.id
     const own_msg = ctx.message.text
     if (reply_msg){
          ctx.message.sendMessage(reply_msg_user_id, own_msg)

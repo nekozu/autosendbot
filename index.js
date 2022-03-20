@@ -11,6 +11,7 @@ n.on('message', (ctx) => {
         ;
     } else {
     ctx.forwardMessage(chat_id, msg, text);
+    }
     const reply_msg = ctx.message.reply_to_message_id
     const reply_msg_user_id = ctx.message.reply_to_message_id.forward_from.id
     const own_msg = ctx.message.text

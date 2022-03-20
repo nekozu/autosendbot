@@ -14,13 +14,13 @@ bot.on('message', async ctx => {
         ;
     } else {
         const msg_id = ctx.msg.message_id;
-        await ctx.api.forwardMessage(own_id, from_id, msg_id);
+        await ctx.forwardMessage(own_id, from_id, msg_id);
     }
     const reply_msg = ctx.update.message.reply_to_message
     const reply_msg_user_id = reply_msg.forward_from.id
     const own_msg = ctx.update.message.text
     if (reply_msg){
-        await ctx.api.sendMessage(reply_msg_user_id, own_msg)
+        await ctx.sendMessage(reply_msg_user_id, own_msg)
     }
 })
 

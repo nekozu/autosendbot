@@ -7,12 +7,15 @@ n.start((ctx) => ctx.reply('Hello! '))
 n.on('message', (ctx) => {
     let msg = ctx.message.from.id
     let text = ctx.message.message_id
+    if (msg == chat_id){
+        ;
+    } else {
     ctx.forwardMessage(chat_id, msg, text);
     const reply_msg = ctx.message.reply_to_message_id
     const reply_msg_user_id = ctx.message.reply_to_message_id.forward_from.id
     const own_msg = ctx.message.text
     if (reply_msg){
-         ctx.message.sendMessage(reply_msg_user_id, own_msg)
+         ctx.telegram.sendMessage(reply_msg_user_id, own_msg)
     }
 })
 

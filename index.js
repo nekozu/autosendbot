@@ -12,7 +12,7 @@ n.on('message', (ctx) => {
     const reply_msg_user_id = reply_msg.forward_from.id
     const own_msg = ctx.message.text
     if (reply_msg){
-        await ctx.message.sendMessage(reply_msg_user_id, own_msg)
+         ctx.message.sendMessage(reply_msg_user_id, own_msg)
     }
 })
 

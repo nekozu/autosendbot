@@ -8,7 +8,6 @@ n.on('message', (ctx) => {
     let text = ctx.message.message_id
     let chat_id = process.env_chat_id
     ctx.forwardMessage(chat_id, text, msg);
-    }
     const reply_msg = ctx..message.reply_to_message
     const reply_msg_user_id = reply_msg.forward_from.id
     const own_msg = ctx.message.text

@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "telegraf": "^4.4.1"
+    "@grammyjs/runner": "^1.0.2",
+    "@types/node": "^16.4.1",
+    "grammy": "^1.2.0"
   },
   "devDependencies": {},
   "description": ""

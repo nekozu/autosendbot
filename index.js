@@ -1,27 +1,20 @@
-const {Bot} = require('grammy');
-const {run} = require('@grammyjs/runner');
+const { Telegraf} = require("telegraf");
+const n = new Telegraf(process.env.token)
 
-const bot = new Bot(process.env.token);
-const own_id = process.env.chat_id;
+n.start((ctx) => ctx.reply('Hello! '))
 
-bot.command('start', async ctx => {
-    return await ctx.reply('halo silahkan kirim pesanmu');
-});
-
-bot.on('message', async ctx => {
-    const from_id = ctx.msg.from.id;
-    if (from_id == own_id){
-        ;
-    } else {
-        const msg_id = ctx.msg.message_id;
-        await ctx.api.forwardMessage(own_id, from_id, msg_id);
+n.on('message', (ctx) => {
+    let msg = ctx.message.from.id
+    let text = ctx.message.message_id
+    let chat_id = process.env_chat_id
+    ctx.forwardMessage(chat_id, text, msg);
     }
-    const reply_msg = ctx.update.message.reply_to_message
+    const reply_msg = ctx..message.reply_to_message
     const reply_msg_user_id = reply_msg.forward_from.id
-    const own_msg = ctx.update.message.text
+    const own_msg = ctx.message.text
     if (reply_msg){
-        await ctx.api.sendMessage(reply_msg_user_id, own_msg)
+        await ctx.message.sendMessage(reply_msg_user_id, own_msg)
     }
 })
 
-run(bot);
+n.launch()
